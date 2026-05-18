@@ -1,0 +1,98 @@
+.footer-section {
+  background-color: #fff;
+  padding: 40px 20px 0 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.footer-column p {
+  font-size: 14px;
+  color: #707070;
+  line-height: 1.7;
+  margin: 6px 0;
+}
+
+/* ✅ Anchor styling matches text, no underline */
+.footer-column a {
+  color: #707070;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color: #505050;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  background-color: #006400;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Floating Icons */
+.floating-icons {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.icon-circle,
+.scroll-top-button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.icon-circle {
+  background-color: white;
+  color: black;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top-button {
+  background-color: green;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.icon-circle:hover,
+.scroll-top-button:hover {
+  transform: scale(1.1);
+}

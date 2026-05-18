@@ -1,0 +1,51 @@
+/* Nav.module.css — Fixed version */
+
+.top-bar {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.left-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ✅ FIX: Added missing .phone-icon style — was referenced in Nav.jsx but not defined,
+   causing the icon to render without sizing or color. */
+.phone-icon {
+  width: 16px;
+  height: 16px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.delivery-text {
+  margin-left: 10px;
+}
+
+.right-info {
+  white-space: nowrap;
+}
+
+/* ✅ ADDED: Responsive styles for small screens */
+@media (max-width: 600px) {
+  .top-bar {
+    padding: 8px 16px;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .delivery-text {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,121 @@
+/* ✅ FIX: Removed global * { margin:0; padding:0; } reset — this belongs in index.css only.
+   Keeping it here overrides styles in every other component. */
+
+.best-deals-container {
+  padding: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.best-deals-container .header {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ✅ FIX: Removed "margin-left: 120px" — caused overflow on smaller screens.
+   Grid is now centered properly using justify-content on parent or auto margins. */
+.product-grid {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.product-card {
+  text-align: center;
+  position: relative;
+}
+
+.sale-label {
+  background-color: green;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  margin: 20px 0;
+}
+
+.category {
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* ✅ FIX: Was "h3 { ... }" (global) — now scoped to .product-card h3 */
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.price {
+  margin: 10px 0;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  margin-right: 10px;
+}
+
+.new-price {
+  color: green;
+  font-weight: bold;
+}
+
+/* ✅ FIX: Was "button { ... }" (global — overwrites ALL buttons on the page!)
+   Now scoped to .product-card button only */
+.product-card button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.product-card button:hover {
+  background-color: #1a7a1a;
+  transition: background-color 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sort {
+    margin-top: 10px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+  }
+}

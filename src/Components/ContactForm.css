@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-container {
+  background-color: #f5f6fa;
+  padding: 50px 20px;
+  text-align: center;
+  color: #111827;
+}
+
+.contact-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: green;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 160px;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0b8a27;
+}
+
+.status-msg {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #10b981;
+}
+
+/* ===== Contact Info Section ===== */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  margin-top: 40px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 260px;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+.info-item svg {
+  color: green;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.status-msg {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #10b981; /* green text */
+}
+
+.info-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-item strong {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.info-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 0 10px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .info-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-item svg {
+    margin-bottom: 8px;
+  }
+
+  .info-item div {
+    align-items: center;
+  }
+}

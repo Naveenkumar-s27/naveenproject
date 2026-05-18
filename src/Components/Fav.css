@@ -1,0 +1,115 @@
+.organic-foods {
+  padding: 40px;
+  background-color: white;
+  font-family: "Segoe UI", sans-serif;
+  
+}
+
+.organic-foods h2 {
+  font-size: 15px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.product-card {
+  
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+
+}
+
+.product-card img {
+    max-width: 100%;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.sale-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: green;
+  color: white;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 50%;
+}
+
+.product-card h4 {
+  margin: 10px 0 5px;
+  font-size: 14px;
+}
+
+.price {
+  font-weight: 500;
+  color: green;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: rgb(159, 140, 140);
+  margin-right: 5px;
+}
+
+.discount {
+  color: green;
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .organic-foods {
+    padding: 20px 10px;
+  }
+
+  .organic-foods h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .product-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .product-card h4 {
+    font-size: 13px;
+  }
+
+  .price {
+    font-size: 13px;
+  }
+
+  .sale-badge {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .organic-foods h2 {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,57 @@
+/* src/components/Newsletter.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.newsletter-container {
+  background-color: #16a34a; /* Tailwind's green-600 */
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.newsletter-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.newsletter-text {
+  font-size: 1.125rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  color: #d1fae5; /* Light green tint */
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.newsletter-input {
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: none;
+  width: 300px;
+  max-width: 100%;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.newsletter-button {
+  padding: 12px 24px;
+  background-color: white;
+  color: #1f2937; /* dark gray */
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.newsletter-button:hover {
+  background-color: #e5e7eb;
+}

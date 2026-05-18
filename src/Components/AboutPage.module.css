@@ -1,0 +1,163 @@
+.about-container {
+  font-family: Arial, sans-serif;
+  padding: 10px 20px;
+}
+
+.card {
+  background-color: #fefffe;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin:20px auto;
+ 
+} 
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 280px;
+  padding: 50px;
+  padding-top: 10px ;
+  padding-bottom: 10px;
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  color: #afb5b7;
+  line-height: 1.6;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #228b22;
+  color: white;
+  margin-top: 40px;
+  padding: 50px 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin:20px auto;
+}
+
+.stat-box {
+  text-align: center;
+  flex: 1 1 150px;
+  gap:5px;
+}
+
+.stat-box h2 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.stat-box p {
+  font-size: 2rem;
+}
+
+/* Floating Buttons */
+.floating-buttons {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+ .btn {
+  border: none;
+  padding: 10px 12px !important;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 6px 0 0 4px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+}
+
+ .demo {
+  background-color: #ff0076 !important;
+}
+
+.buy {
+  background-color: #5a3cf2 !important;
+}
+
+.floating-buttons .icon {
+  background-color: #2ecc71;
+  font-size: 18px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-text {
+    padding: 20px;
+    text-align: center;
+  }
+  .about-text h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .about-text p {
+    text-align: center;
+  }
+
+  .stats-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .stat-box {
+    margin-bottom: 15px;  
+  }
+
+  .floating-buttons {
+    top: auto;
+    bottom: 20px;
+    right: 10px;
+    transform: none;
+    flex-direction: column;
+  }
+}
