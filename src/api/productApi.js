@@ -4,4 +4,7 @@ const API = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
 });
 
-export const getProducts = () => API.get("/products");
+export const getProducts = async () => {
+  const response = await API.get("/products");
+  return response.data;
+};
