@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { getProducts } from "../api/productApi";
 import styles from "./ShopPage.module.css";
 import { ChevronsRight, ChevronsLeft, Heart, ShoppingCart, Share2 } from "lucide-react";
-import { products } from "../lib/Products";
+
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
 import UserHeader from "../Components/user/UserHeader.jsx";
@@ -15,11 +16,25 @@ const ShopPage = () => {
   const searchParams = useSearch({ strict: false });
   const urlQuery = searchParams?.q || "";
 
+  const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState(urlQuery);
   const [sortOption, setSortOption] = useState("default");
   const [currentPage, setCurrentPage] = useState(1);
   const { addToCart } = useCart();
   const { toggleWishlist, isLiked } = useWishlist();
+
+  useEffect(() => {
+  fetchProducts();
+}, []);
+
+const fetchProducts = async () => {
+  try {
+    const data = await getProducts();
+    setProducts(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
   const productsPerPage = 9;
 
@@ -29,8 +44,8 @@ const ShopPage = () => {
       p.description.toLowerCase().includes(searchTerm.toLowerCase())
     )
     .sort((a, b) => {
-      const aP = parseFloat(a.price.replace("$",""));
-      const bP = parseFloat(b.price.replace("$",""));
+      const aP = Number(a.price);
+      const bP = Number(b.price);
       if (sortOption === "priceLow") return aP - bP;
       if (sortOption === "priceHigh") return bP - aP;
       return 0;
@@ -76,7 +91,7 @@ const ShopPage = () => {
 
         <div className={styles["product-grid"]}>
           {currentProducts.map((product) => (
-            <div className={styles["product-card"]} key={product.id}>
+            <div className={styles["product-card"]} key={product._id}>
               {/* ❤️ Wishlist toggle — uses WishlistContext */}
               <div className={styles["wishlist-icon"]} onClick={() => toggleWishlist(product)} style={{ cursor:"pointer" }}>
                 <Heart size={24} className={isLiked(product.id) ? styles.filledHeart : styles.emptyHeart} />
