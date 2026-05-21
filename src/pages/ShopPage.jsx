@@ -237,7 +237,7 @@ const ShopPage = () => {
                     url: window.location.href,
                   });
                 }}
-                style={{ cursor: "pointer" }}
+                
               >
                 <Share2 size={24} />
               </div>

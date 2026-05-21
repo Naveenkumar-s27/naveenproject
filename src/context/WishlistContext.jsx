@@ -2,20 +2,25 @@ import React, { createContext, useContext, useState } from "react";
 
 const WishlistContext = createContext(null);
 
+// ✅ Fix: Use _id (MongoDB) or id (localStorage)
+const getId = (product) => product._id || product.id;
+
 export const WishlistProvider = ({ children }) => {
   const [wishlistItems, setWishlistItems] = useState([]);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
 
   const toggleWishlist = (product) => {
+    const pid = getId(product);
     setWishlistItems((prev) => {
-      const exists = prev.find((p) => p.id === product.id);
+      const exists = prev.find((p) => getId(p) === pid);
       return exists
-        ? prev.filter((p) => p.id !== product.id)
+        ? prev.filter((p) => getId(p) !== pid)
         : [...prev, product];
     });
   };
 
-  const isLiked = (id) => wishlistItems.some((p) => p.id === id);
+  // ✅ Fix: Check using _id or id
+  const isLiked = (id) => wishlistItems.some((p) => getId(p) === id);
 
   return (
     <WishlistContext.Provider
