@@ -1,10 +1,20 @@
 import axios from "axios";
 
-const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-});
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const getProducts = async () => {
-  const response = await API.get("/products");
-  return response.data;
+  try {
+    const response = await axios.get(`${API_URL}/products`);
+
+    console.log("API URL:", `${API_URL}/products`);
+    console.log("PRODUCT API RESPONSE:", response.data);
+
+    return Array.isArray(response.data)
+      ? response.data
+      : response.data.products || [];
+
+  } catch (error) {
+    console.log("GET PRODUCTS ERROR:", error);
+    return [];
+  }
 };

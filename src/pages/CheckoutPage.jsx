@@ -220,7 +220,7 @@ const CheckoutPage = () => {
                           <p style={{ margin:0,fontSize:"12px",color:"#888" }}>×{item.quantity}</p>
                         </div>
                         <span style={{ fontSize:"13px",fontWeight:600,color:"#006f1b" }}>
-                          ${(parseFloat(item.price.replace("$",""))*item.quantity).toFixed(2)}
+                          ${(parseFloat(item.price)*item.quantity).toFixed(2)}
                         </span>
                       </div>
                     ))}

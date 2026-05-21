@@ -40,9 +40,19 @@ const ShopPage = () => {
     const fetchProducts = async () => {
       try {
         const data = await getProducts();
-        setProducts(data);
+
+        console.log(data);
+
+        if (Array.isArray(data)) {
+          setProducts(data);
+        } else if (Array.isArray(data.products)) {
+          setProducts(data.products);
+        } else {
+          setProducts([]);
+        }
       } catch (error) {
         console.log("Error fetching products:", error);
+        setProducts([]);
       }
     };
 
@@ -209,7 +219,7 @@ const ShopPage = () => {
                 className={styles.cart}
                 onClick={() => {
                   addToCart(product);
-                  navigate({ to: "/cart" });
+                 
                 }}
                 title="Add to cart"
                 style={{ cursor: "pointer" }}
@@ -218,10 +228,19 @@ const ShopPage = () => {
               </div>
 
               {/* Share */}
-              <div className={styles.share}>
+              <div
+                className={styles.share}
+                onClick={() => {
+                  navigator.share({
+                    title: product.name,
+                    text: product.description,
+                    url: window.location.href,
+                  });
+                }}
+                style={{ cursor: "pointer" }}
+              >
                 <Share2 size={24} />
               </div>
-
               {/* Product Info */}
               <div className={styles["image-wrapper"]}>
                 <img
@@ -239,12 +258,12 @@ const ShopPage = () => {
                   className={styles["add-to-cart"]}
                   onClick={() => {
                     addToCart(product);
-                    navigate({ to: "/cart" });
+                    navigate({ to: "/checkout" });
                   }}
                 >
                   Buy Now
                 </button>
-              </div>
+            </div>
             </div>
           ))}
         </div>
